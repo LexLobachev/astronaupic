@@ -20,6 +20,3 @@ def file_extension(url):
     path = urlparse(url).path
     ext = os.path.splitext(path)[1]
     return ext
-
-# url = "https://example.com/txt/hello%20world.txt?v=9#python"
-# print(file_extension(url))

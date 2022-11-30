@@ -28,5 +28,3 @@ if __name__ == '__main__':
     else:
         space_api_url = f"https://api.spacexdata.com/v5/launches/latest"
     fetch_spacex_last_launch(directory_name, space_api_url)
-
-# flight_number = '5eb87d42ffd86e000604b384'
