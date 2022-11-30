@@ -6,7 +6,7 @@ from download_functionality import download_pic
 parser = argparse.ArgumentParser(
     description='Скачивает астрономическую картинку дня'
 )
-parser.add_argument('-c', '--count', help='count_of_pics', type=int)
+parser.add_argument('-c', '--count', help='count_of_pics', const=5, type=int)
 
 
 def fetch_multiple_nasa_pics(dir_name, url, api_key, count):
@@ -26,8 +26,5 @@ if __name__ == '__main__':
     directory_name = "images"
     api_url = "https://api.nasa.gov/planetary/apod"
     nasa_api_key = config('NASA_API_KEY')
-    if args.count is not None:
-        count_of_pics = args.count
-    else:
-        count_of_pics = 5
+    count_of_pics = args.count
     fetch_multiple_nasa_pics(directory_name, api_url, nasa_api_key, count_of_pics)
