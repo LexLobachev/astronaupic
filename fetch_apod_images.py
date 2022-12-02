@@ -6,7 +6,7 @@ from download_functionality import download_pic
 parser = argparse.ArgumentParser(
     description='Скачивает астрономическую картинку дня'
 )
-parser.add_argument('-c', '--count', help='count_of_pics', const=5, type=int)
+parser.add_argument('-c', '--count', help='count_of_pics', default=5, type=int)
 
 
 def fetch_multiple_nasa_pics(dir_name, url, api_key, count):
