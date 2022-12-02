@@ -20,7 +20,7 @@ def fetch_multiple_nasa_pics(dir_name, url, api_key, count):
         pic_url = response.json()[pic_number]['url']
         media_type = response.json()[pic_number]['media_type']
         if media_type == 'image':
-            download_pic(dir_name, picture_name, pic_url, pic_number)
+            download_pic(dir_name, picture_name, pic_url, '', pic_number)
 
 
 if __name__ == '__main__':

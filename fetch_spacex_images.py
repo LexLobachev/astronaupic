@@ -16,7 +16,7 @@ def fetch_spacex_last_launch(dir_name, api_url):
     picture_name = 'spacex'
 
     for pic_number, pic_url in enumerate(pics):
-        download_pic(dir_name, picture_name, pic_url, pic_number)
+        download_pic(dir_name, picture_name, pic_url, '', pic_number)
 
 
 if __name__ == '__main__':
