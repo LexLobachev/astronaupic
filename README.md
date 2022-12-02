@@ -7,7 +7,7 @@ telegram channel.
 
 ### Requirements
 
-Python3 should be already installed. Then use pip3 to install dependencies:
+Python3(python 3.11 is recommended) should be already installed. Then use pip3 to install dependencies:
 
 ```bash
 pip3 install -r requirements.txt
