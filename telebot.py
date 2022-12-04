@@ -27,6 +27,6 @@ def post_pictures(chat, folder, hours):
 if __name__ == '__main__':
     args = parser.parse_args()
     folder_name = "images"
-    chat_id = '@astronaupic'
+    chat_id = config('CHAT_ID')
     hours_amount = args.hours
     post_pictures(chat_id, folder_name, hours_amount)
