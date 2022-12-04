@@ -18,7 +18,8 @@ def post_pictures(chat, folder, hours):
 
     while True:
         for picture in images_list:
-            bot.send_document(chat_id=chat, document=open(f'{folder}/{picture}', 'rb'))
+            with open(f'{folder}/{picture}', 'rb') as document:
+                bot.send_document(chat_id=chat, document=document)
             time.sleep(3600*hours)
         random.shuffle(images_list)
 
