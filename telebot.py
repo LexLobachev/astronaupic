@@ -12,8 +12,8 @@ parser = argparse.ArgumentParser(
 parser.add_argument('-h', '--hours', help='amount_of_hours', const=4, type=int)
 
 
-def post_pictures(chat, folder, hours):
-    bot = telegram.Bot(token=config('TELEGRAM_TOKEN'))
+def post_pictures(chat, folder, token, hours):
+    bot = telegram.Bot(token=token)
     images_list = os.listdir(folder)
 
     while True:
@@ -28,5 +28,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
     folder_name = "images"
     chat_id = config('CHAT_ID')
+    tg_token = config('TELEGRAM_TOKEN')
     hours_amount = args.hours
-    post_pictures(chat_id, folder_name, hours_amount)
+    post_pictures(chat_id, folder_name, tg_token, hours_amount)
