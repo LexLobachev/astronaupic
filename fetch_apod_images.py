@@ -17,8 +17,9 @@ def fetch_multiple_nasa_pics(dir_name, url, api_key, count):
     picture_name = 'nasa_apod'
 
     for pic_number in range(count):
-        pic_url = response.json()[pic_number]['url']
-        media_type = response.json()[pic_number]['media_type']
+        pic_json = response.json()[pic_number]
+        pic_url = pic_json['url']
+        media_type = pic_json['media_type']
         if media_type == 'image':
             download_pic(dir_name, picture_name, pic_url, '', pic_number)
 
