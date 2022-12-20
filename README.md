@@ -96,7 +96,13 @@ endlessly post the photos in random order
 If you want to download photos in other interval(for example 2 hours):
 
 ```bash
-$ python3 fetch_spacex_images.py -h 2
+$ python3 telebot.py -h 2
+```
+
+Or if you want to post an exact photo(for example nasa_apod_4.jpg):
+
+```bash
+$ python3 telebot.py -pn nasa_apod_4.jpg
 ```
 
 ## Brief summary of other files

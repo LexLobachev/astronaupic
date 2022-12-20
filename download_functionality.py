@@ -7,7 +7,7 @@ from pathlib import Path
 
 def download_pic(dir_name, pic_name, url, payload, pic_number):
     Path(dir_name).mkdir(parents=True, exist_ok=True)
-    pic_name = f"{pic_name}_{pic_number}.jpg"
+    pic_name = f"{pic_name}_{pic_number}.{get_file_extension(url)}"
     filename = os.path.join(dir_name, pic_name)
 
     response = requests.get(url, params=payload)
