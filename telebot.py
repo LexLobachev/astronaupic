@@ -12,7 +12,7 @@ from telegram.error import NetworkError
 parser = argparse.ArgumentParser(
     description='Постит фотографии в телеграмм'
 )
-parser.add_argument('-h', '--hours', help='amount_of_hours', const=4, type=int)
+parser.add_argument('-hh', '--hours', help='amount_of_hours', default=4, type=int)
 
 
 def post_pictures(chat, folder, token, hours):
