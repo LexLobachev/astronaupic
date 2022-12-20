@@ -21,7 +21,7 @@ def post_pictures(chat, folder, token, hours):
 
     while True:
         for picture in images_list:
-            with open(f'{folder}/{picture}', 'rb') as document:
+            with open(f'{os.path.join(folder, picture)}', 'rb') as document:
                 try:
                     bot.send_document(chat_id=chat, document=document)
                 except NetworkError as e:
