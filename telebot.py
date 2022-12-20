@@ -26,8 +26,6 @@ def post_pictures(chat, folder, token, hours):
                     bot.send_document(chat_id=chat, document=document)
                 except NetworkError as e:
                     logging.error(f'Problem with network connection! \n{e}')
-                    time.sleep(30)
-                    bot.send_document(chat_id=chat, document=document)
             time.sleep(3600*hours)
         random.shuffle(images_list)
 
