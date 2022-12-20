@@ -17,7 +17,7 @@ def download_pic(dir_name, pic_name, url, payload, pic_number):
         file.write(response.content)
 
 
-def file_extension(url):
+def get_file_extension(url):
     path = urlparse(url).path
     ext = os.path.splitext(path)[1]
     return ext
