@@ -35,7 +35,7 @@ def post_pictures(chat, folder, token, hours):
 if __name__ == '__main__':
     args = parser.parse_args()
     folder_name = "images"
-    chat_id = config('CHAT_ID')
+    chat_id = config('TG_CHAT_ID')
     tg_token = config('TELEGRAM_TOKEN')
     hours_amount = args.hours
     post_pictures(chat_id, folder_name, tg_token, hours_amount)
