@@ -16,6 +16,14 @@ parser.add_argument('-hh', '--hours', help='amount_of_hours', default=4, type=in
 parser.add_argument('-pn', '--picture', help='exact picture or random', default='random', type=str)
 
 
+def open_send_picture(folder, picture, chat, bot):
+    with open(f'{os.path.join(folder, picture)}', 'rb') as document:
+        try:
+            bot.send_document(chat_id=chat, document=document)
+        except NetworkError as e:
+            logging.error(f'Problem with network connection! \n{e}')
+
+
 def post_pictures(chat, folder, token, hours, pic_name):
     bot = telegram.Bot(token=token)
     images_list = os.listdir(folder)
@@ -23,19 +31,11 @@ def post_pictures(chat, folder, token, hours, pic_name):
     if pic_name == 'random':
         while True:
             for picture in images_list:
-                with open(f'{os.path.join(folder, picture)}', 'rb') as document:
-                    try:
-                        bot.send_document(chat_id=chat, document=document)
-                    except NetworkError as e:
-                        logging.error(f'Problem with network connection! \n{e}')
+                open_send_picture(folder, picture, chat, bot)
                 time.sleep(hours)
             random.shuffle(images_list)
     else:
-        with open(f'{os.path.join(folder, pic_name)}', 'rb') as document:
-            try:
-                bot.send_document(chat_id=chat, document=document)
-            except NetworkError as e:
-                logging.error(f'Problem with network connection! \n{e}')
+        open_send_picture(folder, pic_name, chat, bot)
 
 
 if __name__ == '__main__':
