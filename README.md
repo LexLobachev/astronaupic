@@ -17,6 +17,7 @@ pip3 install -r requirements.txt
 
 - NASA_API_KEY
 - TELEGRAM_TOKEN
+- TG_CHAT_ID
 
 1. Put `.env` file near `requirements.txt`.
 2. `.env` contains text data without quotes.
@@ -27,6 +28,7 @@ For example, if you print `.env` content, you will see:
 $ cat .env
 NASA_API_KEY=WLNJeZjPhkbBS1HLzDuY6ylzp5Pxo0GnFkVJjyvz
 TELEGRAM_TOKEN=9476281456:AAH2Qc4a1OUshqoilWsk3GSw82ZUR6yhX8s
+TG_CHAT_ID=@astronaut_pics
 ```
 
 #### How to get
@@ -35,6 +37,7 @@ TELEGRAM_TOKEN=9476281456:AAH2Qc4a1OUshqoilWsk3GSw82ZUR6yhX8s
 * To generate a Telegram Access Token, you have to talk to [BotFather](https://t.me/botfather) and follow a few simple
   steps (
   described [here](https://core.telegram.org/bots#6-botfather))
+* TG_CHAT_ID is just a chat name, like in the example @astronaut_pics
 
 ## Run
 
