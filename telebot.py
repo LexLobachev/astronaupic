@@ -26,14 +26,14 @@ def open_send_picture(folder, picture, chat, bot):
 
 def post_pictures(chat, folder, token, hours, pic_name):
     bot = telegram.Bot(token=token)
-    images_list = os.listdir(folder)
+    images = os.listdir(folder)
 
     if pic_name == 'random':
         while True:
-            for picture in images_list:
+            for picture in images:
                 open_send_picture(folder, picture, chat, bot)
                 time.sleep(hours)
-            random.shuffle(images_list)
+            random.shuffle(images)
     else:
         open_send_picture(folder, pic_name, chat, bot)
 
