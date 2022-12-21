@@ -5,7 +5,8 @@ import requests
 from pathlib import Path
 
 
-def download_pic(dir_name, pic_name, url, payload, pic_number):
+def download_pic(pic_name, url, payload, pic_number):
+    dir_name = "images"
     Path(dir_name).mkdir(parents=True, exist_ok=True)
     pic_name = f"{pic_name}_{pic_number}.{get_file_extension(url)}"
     filename = os.path.join(dir_name, pic_name)
