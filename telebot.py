@@ -16,7 +16,7 @@ parser.add_argument('-hh', '--hours', help='amount_of_hours', default=4, type=in
 parser.add_argument('-pn', '--picture', help='exact picture or random', default='random', type=str)
 
 
-def open_send_picture(folder, picture, chat, bot):
+def open_and_send_picture(folder, picture, chat, bot):
     with open(f'{os.path.join(folder, picture)}', 'rb') as document:
         try:
             bot.send_document(chat_id=chat, document=document)
@@ -31,11 +31,11 @@ def post_pictures(chat, folder, token, hours, pic_name):
     if pic_name == 'random':
         while True:
             for picture in images:
-                open_send_picture(folder, picture, chat, bot)
+                open_and_send_picture(folder, picture, chat, bot)
                 time.sleep(hours)
             random.shuffle(images)
     else:
-        open_send_picture(folder, pic_name, chat, bot)
+        open_and_send_picture(folder, pic_name, chat, bot)
 
 
 if __name__ == '__main__':
