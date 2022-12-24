@@ -32,7 +32,7 @@ def post_pictures(chat, folder, token, hours, pic_name):
         while True:
             for picture in images:
                 open_and_send_picture(folder, picture, chat, bot)
-                time.sleep(hours)
+                time.sleep(3600*hours)
             random.shuffle(images)
     else:
         open_and_send_picture(folder, pic_name, chat, bot)
